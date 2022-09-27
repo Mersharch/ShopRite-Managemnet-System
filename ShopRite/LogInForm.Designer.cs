@@ -89,6 +89,7 @@
             this.loginBtn.TabIndex = 2;
             this.loginBtn.Text = "Log In";
             this.loginBtn.UseVisualStyleBackColor = false;
+            this.loginBtn.Click += new System.EventHandler(this.loginBtn_Click);
             // 
             // loginPassword
             // 
@@ -139,6 +140,7 @@
             this.leftLogin.Name = "leftLogin";
             this.leftLogin.Size = new System.Drawing.Size(458, 573);
             this.leftLogin.TabIndex = 1;
+            this.leftLogin.Paint += new System.Windows.Forms.PaintEventHandler(this.leftLogin_Paint);
             // 
             // label2
             // 

@@ -33,7 +33,9 @@ namespace ShopRite
 
         private void logoutBtn_Click(object sender, EventArgs e)
         {
-
+            LogInForm form = new LogInForm();
+            form.Show();
+            this.Close();
         }
 
         private void stockBtn_Click(object sender, EventArgs e)

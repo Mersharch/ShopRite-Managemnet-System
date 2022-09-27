@@ -117,7 +117,7 @@ namespace ShopRite
                     }
                     else
                     {
-                        MessageBox.Show("Category doesn't exist");
+                        MessageBox.Show("Category ID doesn't exist");
                         db.close();
                     }
                 }
@@ -135,6 +135,45 @@ namespace ShopRite
         private void refreshBtn_Click(object sender, EventArgs e)
         {
             getCategories();
+        }
+
+        private void editBtn_Click(object sender, EventArgs e)
+        {
+            db.open();
+            MySqlCommand command;
+
+            if (catID.Text != "")
+            {
+                try
+                {
+                    string countQuery = "select count(*) from categories where cID = '" + catID.Text + "' ";
+                    command = new MySqlCommand(countQuery, db.connection);
+                    Int32 count = Convert.ToInt32(command.ExecuteScalar());
+                    if (count > 0)
+                    {
+                        string query = "update categories set cName ='"+catName.Text+"' where cID = '" + catID.Text + "' ";
+                        command = new MySqlCommand(query, db.connection);
+                        command.ExecuteNonQuery();
+                        MessageBox.Show("Category updated Successfully");
+                        db.close();
+                        clear();
+                        getCategories();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Category ID doesn't exist");
+                        db.close();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Enter Category ID");
+            }
         }
     }
 }

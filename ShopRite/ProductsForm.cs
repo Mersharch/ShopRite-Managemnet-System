@@ -173,5 +173,76 @@ namespace ShopRite
                 MessageBox.Show("Enter Product ID");
             }
         }
+
+        private void editBtn_Click(object sender, EventArgs e)
+        {
+            db.open();
+            MySqlCommand command;
+
+            if (prodID.Text != "")
+            {
+                try
+                {
+                    string countQuery = "select count(*) from products where pID = '" + prodID.Text + "' ";
+                    command = new MySqlCommand(countQuery, db.connection);
+                    Int32 count = Convert.ToInt32(command.ExecuteScalar());
+                    if (count > 0)
+                    {
+                        if (prodName.Text != "")
+                        {
+                            string query = "update  products set pName = '"+prodName.Text+"' where pID = '" + prodID.Text + "' ";
+                            command = new MySqlCommand(query, db.connection);
+                            command.ExecuteNonQuery();
+                        }
+
+                        if (prodDesc.Text != "")
+                        {
+                            string query = "update  products set pDesc = '" + prodDesc.Text + "' where pID = '" + prodID.Text + "' ";
+                            command = new MySqlCommand(query, db.connection);
+                            command.ExecuteNonQuery();
+                        }
+
+                        if (prodCategory.SelectedValue.ToString() != "")
+                        {
+                            string query = "update products set pCategory = '" + prodCategory.SelectedValue.ToString() + "' where pID = '" + prodID.Text + "' ";
+                            command = new MySqlCommand(query, db.connection);
+                            command.ExecuteNonQuery();
+                        }
+
+                        if (prodQty.Value != 0)
+                        {
+                            string query = "update  products set pQty = '" + prodQty.Value + "' where pID = '" + prodID.Text + "' ";
+                            command = new MySqlCommand(query, db.connection);
+                            command.ExecuteNonQuery();
+                        }
+
+                        if (prodPrice.Value != 0)
+                        {
+                            string query = "update  products set pPrice = '" + prodPrice.Value + "' where pID = '" + prodID.Text + "' ";
+                            command = new MySqlCommand(query, db.connection);
+                            command.ExecuteNonQuery();
+                        }
+
+                        MessageBox.Show("Product updated Successfully");
+                        db.close();
+                        clear();
+                        getProducts();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Product ID doesn't exist");
+                        db.close();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Enter Product ID");
+            }
+        }
     }
 }

@@ -170,5 +170,79 @@ namespace ShopRite
         {
             getUsers();
         }
+
+        private void editBtn_Click(object sender, EventArgs e)
+        {
+            db.open();
+            MySqlCommand command;
+            Int32 adminCode = 4519;
+
+            if (userID.Text != "" & adminNum.Value != 0)
+            {
+                if (adminNum.Value != adminCode)
+                {
+                    MessageBox.Show("Incorrect Admin Code");
+                }
+                else
+                {
+                    try
+                    {
+                        string countQuery = "select count(*) from users where uID = '" + userID.Text + "' ";
+                        command = new MySqlCommand(countQuery, db.connection);
+                        Int32 count = Convert.ToInt32(command.ExecuteScalar());
+                        if (count > 0)
+                        {
+                            if(fullName.Text != "")
+                            {
+                                string query = "update users set uFullname = '"+fullName.Text+"' where uID = '" + userID.Text + "' ";
+                                command = new MySqlCommand(query, db.connection);
+                                command.ExecuteNonQuery();
+                            }
+
+                            if (userUserName.Text != "")
+                            {
+                                string query = "update users set uUsername = '" + userUserName.Text + "' where uID = '" + userID.Text + "' ";
+                                command = new MySqlCommand(query, db.connection);
+                                command.ExecuteNonQuery();
+                            }
+
+                            if (userPassword.Text != "")
+                            {
+                                string query = "update users set uPassword = '" + userPassword.Text + "' where uID = '" + userID.Text + "' ";
+                                command = new MySqlCommand(query, db.connection);
+                                command.ExecuteNonQuery();
+                            }
+
+                            if (userContact.Text != "")
+                            {
+                                string query = "update users set uContact = '" + userContact.Text + "' where uID = '" + userID.Text + "' ";
+                                command = new MySqlCommand(query, db.connection);
+                                command.ExecuteNonQuery();
+                            }
+
+                            MessageBox.Show("User successfully updated");
+                            db.close();
+                            clear();
+                            getUsers();
+                        }
+                        else
+                        {
+                            MessageBox.Show("User ID doesn't exist");
+                            db.close();
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                }
+
+
+            }
+            else
+            {
+                MessageBox.Show("User ID and Admin Code are required for this operation");
+            }
+        }
     }
 }
