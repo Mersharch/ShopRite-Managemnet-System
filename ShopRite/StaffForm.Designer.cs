@@ -1,6 +1,6 @@
 ﻿namespace ShopRite
 {
-    partial class UserForm
+    partial class StaffForm
     {
         /// <summary>
         /// Required designer variable.

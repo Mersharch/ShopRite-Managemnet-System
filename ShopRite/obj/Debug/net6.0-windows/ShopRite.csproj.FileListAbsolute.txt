@@ -18,7 +18,6 @@ C:\Users\mersh\source\repos\ShopRite\ShopRite\obj\Debug\net6.0-windows\ref\ShopR
 C:\Users\mersh\source\repos\ShopRite\ShopRite\obj\Debug\net6.0-windows\ShopRite.MainForm.resources
 C:\Users\mersh\source\repos\ShopRite\ShopRite\obj\Debug\net6.0-windows\ShopRite.ProductsForm.resources
 C:\Users\mersh\source\repos\ShopRite\ShopRite\obj\Debug\net6.0-windows\ShopRite.CategoriesForm.resources
-C:\Users\mersh\source\repos\ShopRite\ShopRite\obj\Debug\net6.0-windows\ShopRite.UserForm.resources
 C:\Users\mersh\source\repos\ShopRite\ShopRite\bin\Debug\net6.0-windows\Google.Protobuf.dll
 C:\Users\mersh\source\repos\ShopRite\ShopRite\bin\Debug\net6.0-windows\K4os.Compression.LZ4.dll
 C:\Users\mersh\source\repos\ShopRite\ShopRite\bin\Debug\net6.0-windows\K4os.Compression.LZ4.Streams.dll
@@ -28,3 +27,5 @@ C:\Users\mersh\source\repos\ShopRite\ShopRite\bin\Debug\net6.0-windows\Ubiety.Dn
 C:\Users\mersh\source\repos\ShopRite\ShopRite\bin\Debug\net6.0-windows\ZstdNet.dll
 C:\Users\mersh\source\repos\ShopRite\ShopRite\bin\Debug\net6.0-windows\BouncyCastle.Crypto.dll
 C:\Users\mersh\source\repos\ShopRite\ShopRite\obj\Debug\net6.0-windows\ShopRite.csproj.CopyComplete
+C:\Users\mersh\source\repos\ShopRite\ShopRite\obj\Debug\net6.0-windows\ShopRite.StaffForm.resources
+C:\Users\mersh\source\repos\ShopRite\ShopRite\obj\Debug\net6.0-windows\ShopRite.HomeForm.resources

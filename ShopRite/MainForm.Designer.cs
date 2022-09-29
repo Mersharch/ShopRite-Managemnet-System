@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.nav = new System.Windows.Forms.Panel();
-            this.userBtn = new System.Windows.Forms.Button();
+            this.staffBtn = new System.Windows.Forms.Button();
             this.logoutBtn = new System.Windows.Forms.Button();
             this.stockBtn = new System.Windows.Forms.Button();
             this.categoryBtn = new System.Windows.Forms.Button();
@@ -44,7 +44,7 @@
             // nav
             // 
             this.nav.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.nav.Controls.Add(this.userBtn);
+            this.nav.Controls.Add(this.staffBtn);
             this.nav.Controls.Add(this.logoutBtn);
             this.nav.Controls.Add(this.stockBtn);
             this.nav.Controls.Add(this.categoryBtn);
@@ -54,24 +54,23 @@
             this.nav.Dock = System.Windows.Forms.DockStyle.Top;
             this.nav.Location = new System.Drawing.Point(0, 0);
             this.nav.Name = "nav";
-            this.nav.Padding = new System.Windows.Forms.Padding(0, 0, 0, 2);
             this.nav.Size = new System.Drawing.Size(978, 72);
             this.nav.TabIndex = 0;
             // 
-            // userBtn
+            // staffBtn
             // 
-            this.userBtn.Dock = System.Windows.Forms.DockStyle.Left;
-            this.userBtn.FlatAppearance.BorderSize = 0;
-            this.userBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.userBtn.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.userBtn.Location = new System.Drawing.Point(564, 0);
-            this.userBtn.Margin = new System.Windows.Forms.Padding(0);
-            this.userBtn.Name = "userBtn";
-            this.userBtn.Size = new System.Drawing.Size(110, 70);
-            this.userBtn.TabIndex = 7;
-            this.userBtn.Text = "Users";
-            this.userBtn.UseVisualStyleBackColor = true;
-            this.userBtn.Click += new System.EventHandler(this.userBtn_Click);
+            this.staffBtn.Dock = System.Windows.Forms.DockStyle.Left;
+            this.staffBtn.FlatAppearance.BorderSize = 0;
+            this.staffBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.staffBtn.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.staffBtn.Location = new System.Drawing.Point(564, 0);
+            this.staffBtn.Margin = new System.Windows.Forms.Padding(0);
+            this.staffBtn.Name = "staffBtn";
+            this.staffBtn.Size = new System.Drawing.Size(110, 72);
+            this.staffBtn.TabIndex = 7;
+            this.staffBtn.Text = "Staff";
+            this.staffBtn.UseVisualStyleBackColor = true;
+            this.staffBtn.Click += new System.EventHandler(this.userBtn_Click);
             // 
             // logoutBtn
             // 
@@ -96,7 +95,7 @@
             this.stockBtn.Location = new System.Drawing.Point(454, 0);
             this.stockBtn.Margin = new System.Windows.Forms.Padding(0);
             this.stockBtn.Name = "stockBtn";
-            this.stockBtn.Size = new System.Drawing.Size(110, 70);
+            this.stockBtn.Size = new System.Drawing.Size(110, 72);
             this.stockBtn.TabIndex = 5;
             this.stockBtn.Text = "Stock";
             this.stockBtn.UseVisualStyleBackColor = true;
@@ -110,7 +109,7 @@
             this.categoryBtn.Location = new System.Drawing.Point(344, 0);
             this.categoryBtn.Margin = new System.Windows.Forms.Padding(0);
             this.categoryBtn.Name = "categoryBtn";
-            this.categoryBtn.Size = new System.Drawing.Size(110, 70);
+            this.categoryBtn.Size = new System.Drawing.Size(110, 72);
             this.categoryBtn.TabIndex = 3;
             this.categoryBtn.Text = "Categories";
             this.categoryBtn.UseVisualStyleBackColor = true;
@@ -125,7 +124,7 @@
             this.productBtn.Location = new System.Drawing.Point(234, 0);
             this.productBtn.Margin = new System.Windows.Forms.Padding(0);
             this.productBtn.Name = "productBtn";
-            this.productBtn.Size = new System.Drawing.Size(110, 70);
+            this.productBtn.Size = new System.Drawing.Size(110, 72);
             this.productBtn.TabIndex = 2;
             this.productBtn.Text = "Products";
             this.productBtn.UseVisualStyleBackColor = true;
@@ -140,7 +139,7 @@
             this.homeBtn.Location = new System.Drawing.Point(124, 0);
             this.homeBtn.Margin = new System.Windows.Forms.Padding(0);
             this.homeBtn.Name = "homeBtn";
-            this.homeBtn.Size = new System.Drawing.Size(110, 70);
+            this.homeBtn.Size = new System.Drawing.Size(110, 72);
             this.homeBtn.TabIndex = 1;
             this.homeBtn.Text = "Home";
             this.homeBtn.UseVisualStyleBackColor = true;
@@ -151,7 +150,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(124, 70);
+            this.panel2.Size = new System.Drawing.Size(124, 72);
             this.panel2.TabIndex = 0;
             // 
             // footer
@@ -199,6 +198,6 @@
         private Panel panel2;
         private Panel footer;
         private Panel contentPanel;
-        private Button userBtn;
+        private Button staffBtn;
     }
 }

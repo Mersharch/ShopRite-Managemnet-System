@@ -45,7 +45,7 @@ namespace ShopRite
 
         private void homeBtn_Click(object sender, EventArgs e)
         {
-
+            openChildForm(new HomeForm());
         }
 
         private void productBtn_Click(object sender, EventArgs e)
@@ -60,12 +60,12 @@ namespace ShopRite
 
         private void userBtn_Click(object sender, EventArgs e)
         {
-            openChildForm(new UserForm());
+            openChildForm(new StaffForm());
         }
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-
+            openChildForm(new HomeForm());
         }
     }
 }

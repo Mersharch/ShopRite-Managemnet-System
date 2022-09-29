@@ -37,7 +37,7 @@ namespace ShopRite
             {
                 try
                 {
-                    string countQuery = "select count(*) from users where uUsername = '" + loginUserName.Text + "' and uPassword = '"+loginPassword.Text+"' ";
+                    string countQuery = "select count(*) from staff where uUsername = '" + loginUserName.Text + "' and uPassword = '"+loginPassword.Text+"' ";
                     command = new MySqlCommand(countQuery, db.connection);
                     Int32 count = Convert.ToInt32(command.ExecuteScalar());
                     if (count > 0)

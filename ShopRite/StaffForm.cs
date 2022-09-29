@@ -12,16 +12,16 @@ using System.Drawing.Text;
 
 namespace ShopRite
 {
-    public partial class UserForm : Form
+    public partial class StaffForm : Form
     {
-        public UserForm()
+        public StaffForm()
         {
             InitializeComponent();
         }
 
         private void getUsers()
         {
-            string query = "select * from users";
+            string query = "select * from staff";
             MySqlDataReader dr;
 
             try
@@ -84,7 +84,7 @@ namespace ShopRite
                 {
                     try
                     {
-                        string countQuery = "select count(*) from users where uUsername = '" + userUserName.Text + "' ";
+                        string countQuery = "select count(*) from staff where uUsername = '" + userUserName.Text + "' ";
                         command = new MySqlCommand(countQuery, db.connection);
                         Int32 count = Convert.ToInt32(command.ExecuteScalar());
                         if (count > 0)
@@ -94,7 +94,7 @@ namespace ShopRite
                         }
                         else
                         {
-                            string query = "insert into users values ( '" + userID.Text + "', '" + fullName.Text + "', '" + userUserName.Text + "', '" + userPassword.Text + "', '" + userContact.Text + "')";
+                            string query = "insert into staff values ( '" + userID.Text + "', '" + fullName.Text + "', '" + userUserName.Text + "', '" + userPassword.Text + "', '" + userContact.Text + "')";
                             command = new MySqlCommand(query, db.connection);
                             command.ExecuteNonQuery();
                             MessageBox.Show("User successfully added");
@@ -133,12 +133,12 @@ namespace ShopRite
                 {
                     try
                     {
-                        string countQuery = "select count(*) from users where uID = '" + userID.Text + "' ";
+                        string countQuery = "select count(*) from staff where uID = '" + userID.Text + "' ";
                         command = new MySqlCommand(countQuery, db.connection);
                         Int32 count = Convert.ToInt32(command.ExecuteScalar());
                         if (count > 0)
                         {
-                            string query = "delete from users where uID = '" + userID.Text + "' ";
+                            string query = "delete from staff where uID = '" + userID.Text + "' ";
                             command = new MySqlCommand(query, db.connection);
                             command.ExecuteNonQuery();
                             MessageBox.Show("User successfully deleted");
@@ -187,35 +187,35 @@ namespace ShopRite
                 {
                     try
                     {
-                        string countQuery = "select count(*) from users where uID = '" + userID.Text + "' ";
+                        string countQuery = "select count(*) from staff where uID = '" + userID.Text + "' ";
                         command = new MySqlCommand(countQuery, db.connection);
                         Int32 count = Convert.ToInt32(command.ExecuteScalar());
                         if (count > 0)
                         {
                             if(fullName.Text != "")
                             {
-                                string query = "update users set uFullname = '"+fullName.Text+"' where uID = '" + userID.Text + "' ";
+                                string query = "update staff set uFullname = '"+fullName.Text+"' where uID = '" + userID.Text + "' ";
                                 command = new MySqlCommand(query, db.connection);
                                 command.ExecuteNonQuery();
                             }
 
                             if (userUserName.Text != "")
                             {
-                                string query = "update users set uUsername = '" + userUserName.Text + "' where uID = '" + userID.Text + "' ";
+                                string query = "update staff set uUsername = '" + userUserName.Text + "' where uID = '" + userID.Text + "' ";
                                 command = new MySqlCommand(query, db.connection);
                                 command.ExecuteNonQuery();
                             }
 
                             if (userPassword.Text != "")
                             {
-                                string query = "update users set uPassword = '" + userPassword.Text + "' where uID = '" + userID.Text + "' ";
+                                string query = "update staff set uPassword = '" + userPassword.Text + "' where uID = '" + userID.Text + "' ";
                                 command = new MySqlCommand(query, db.connection);
                                 command.ExecuteNonQuery();
                             }
 
                             if (userContact.Text != "")
                             {
-                                string query = "update users set uContact = '" + userContact.Text + "' where uID = '" + userID.Text + "' ";
+                                string query = "update staff set uContact = '" + userContact.Text + "' where uID = '" + userID.Text + "' ";
                                 command = new MySqlCommand(query, db.connection);
                                 command.ExecuteNonQuery();
                             }
